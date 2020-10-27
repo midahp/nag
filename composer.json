@@ -1,7 +1,7 @@
 {
     "name": "horde/nag",
     "description": "Task list application",
-    "type": "project",
+    "type": "horde-application",
     "homepage": "https://www.horde.org/apps/nag",
     "license": "GPL-2.0",
     "authors": [
@@ -22,56 +22,60 @@
         }
     ],
     "version": "5.0.0",
-    "time": "2017-11-11",
+    "time": "2020-10-27",
     "repositories": [
         {
-            "type": "pear",
-            "url": "https://pear.horde.org"
+            "type": "composer",
+            "url": "https://horde-satis.maintaina.com"
         }
     ],
     "require": {
+        "horde/horde-installer-plugin": "dev-master",
         "php": "^5.3 || ^7",
-        "pear-pear.horde.org/content": "^2.0.5",
-        "pear-pear.horde.org/horde": "^5",
-        "pear-pear.horde.org/Horde_Auth": "^2",
-        "pear-pear.horde.org/Horde_Controller": "^2",
-        "pear-pear.horde.org/Horde_Core": "^2.31",
-        "pear-pear.horde.org/Horde_Data": "^2",
-        "pear-pear.horde.org/Horde_Date": "^2.1",
-        "pear-pear.horde.org/Horde_Date_Parser": "^2",
-        "pear-pear.horde.org/Horde_Dav": "^1",
-        "pear-pear.horde.org/Horde_Exception": "^2",
-        "pear-pear.horde.org/Horde_Form": "^2",
-        "pear-pear.horde.org/Horde_Group": "^2",
-        "pear-pear.horde.org/Horde_History": "^2.1",
-        "pear-pear.horde.org/Horde_Icalendar": "^2",
-        "pear-pear.horde.org/Horde_Mail": "^2",
-        "pear-pear.horde.org/Horde_Mime": "^2",
-        "pear-pear.horde.org/Horde_Perms": "^2",
-        "pear-pear.horde.org/Horde_Prefs": "^2",
-        "pear-pear.horde.org/Horde_Routes": "^2",
-        "pear-pear.horde.org/Horde_Share": "^2",
-        "pear-pear.horde.org/Horde_Support": "^2",
-        "pear-pear.horde.org/Horde_Text_Filter": "^2",
-        "pear-pear.horde.org/Horde_Url": "^2",
-        "pear-pear.horde.org/Horde_Util": "^2",
-        "pear-pear.horde.org/Horde_View": "^2",
+        "horde/content": "dev-master",
+        "horde/horde": "dev-master",
+        "horde/auth": "dev-master",
+        "horde/controller": "dev-master",
+        "horde/core": "dev-master",
+        "horde/data": "dev-master",
+        "horde/date": "dev-master",
+        "horde/date_parser": "dev-master",
+        "horde/dav": "dev-master",
+        "horde/exception": "dev-master",
+        "horde/form": "dev-master",
+        "horde/group": "dev-master",
+        "horde/history": "dev-master",
+        "horde/icalendar": "dev-master",
+        "horde/mail": "dev-master",
+        "horde/mime": "dev-master",
+        "horde/perms": "dev-master",
+        "horde/prefs": "dev-master",
+        "horde/routes": "dev-master",
+        "horde/share": "dev-master",
+        "horde/support": "dev-master",
+        "horde/text_filter": "dev-master",
+        "horde/url": "dev-master",
+        "horde/util": "dev-master",
+        "horde/view": "dev-master",
         "ext-gettext": "*"
     },
     "suggest": {
-        "pear-pear.horde.org/Horde_ActiveSync": "^2.4",
-        "pear-pear.horde.org/Horde_Backup": "^1",
-        "pear-pear.horde.org/Horde_Db": "^2",
-        "pear-pear.horde.org/Horde_OpenXchange": "^1",
-        "pear-pear.horde.org/Horde_Test": "^2"
-    },
-    "replace": {
-        "pear-pear.horde.org/nag": "5.*",
-        "pear-horde/nag": "5.*"
+        "horde/activesync": "^2.4",
+        "horde/backup": "^1",
+        "horde/db": "^2",
+        "horde/openxchange": "^1",
+        "horde/test": "^2"
     },
     "autoload": {
         "psr-0": {
             "Nag": "lib/"
         }
-    }
+    },
+    "bin": [
+        "bin/nag-convert-sql-shares-to-sqlng",
+        "bin/nag-create-missing-add-histories-sql",
+        "bin/nag-import-vtodos",
+        "bin/nag-convert-datatree-shares-to-sql",
+        "bin/nag-import-openxchange"
+    ]
 }
